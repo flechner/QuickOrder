@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bestellung aufnehmen</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-input type="number" placeholder="Tisch Nr." [(ngModel)]="tableNr"></ion-input>
+    <ion-input type="number" placeholder="Kellner Nr." [(ngModel)]="waiterId"></ion-input>
+  </ion-item>
+  <ion-searchbar placeholder="Produkt suchen" autocomplete="on" autocorrect="on" (ionInput)="filterItems($event)">
+
+  </ion-searchbar>
+  <ion-list *ngIf="showList">
+    <ion-item *ngFor="let item of products" (click)="productSelected(item)">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+  <br>
+  <table id="Orders">
+    <tr id="header">
+      <th class="produkt">Produkt</th>
+      <th class="preis">Preis</th>
+      <th class="menge">Menge</th>
+      <th colspan="3"></th>
+    </tr>
+    <tr id="Initial" class="initial">
+      <td>{{prodName}}</td>
+      <td>{{prodPrice}}</td>
+      <td>{{amount}}</td>
+      <td id="add" (click)="productAddClick()">
+        <ion-icon name="add"></ion-icon>
+      </td>
+      <td id="remove" (click)="productRemoveClick()">
+          <ion-icon name="remove"></ion-icon>
+      </td>
+      <td id="delete" (click)="productDeleteClick()">
+          <ion-icon name="trash"></ion-icon>
+      </td>
+    </tr>
+</table>
+<div>
+  <button class="button" ion-button (click)="removeOrders()">Abbrechen</button>
+  <button class="button" ion-button style="float: right;" (click)="sendOrder()">Bestellen</button>
+</div>
+</ion-content>
+
+<!--    10.0.2.15:5001/api/token/authenticate   username: admin password: htlgkr
+        `http://${localStorage['ipAddress']}/api/categories`
+   <tr>
+      <td>Bier 0.5L</td>
+      <td>3.20</td>
+      <td>2</td>
+      <td><ion-icon (click)="increaseValue()" class="up" name="add"></ion-icon></td> 
+      <td><ion-icon class="icon" name="remove"></ion-icon></td>
+      <td><ion-icon class="icon" name="close"></ion-icon></td>
+    </tr>
+    <tr>
+        <td>Frankfurter</td>
+        <td>2.50</td>
+        <td>1</td>
+        <td><ion-icon class="icon" name="add"></ion-icon></td>
+        <td><ion-icon class="icon" name="remove"></ion-icon></td>
+        <td><ion-icon class="icon" name="close"></ion-icon></td>
+    </tr>
+    <tr>
+      <td>Radler</td>
+      <td>1000000</td>
+      <td>100</td>
+      <td><ion-icon class="icon" name="add"></ion-icon></td>
+      <td><ion-icon class="icon" name="remove"></ion-icon></td>
+      <td><ion-icon class="icon" name="close"></ion-icon></td>
+  </tr>
+  <tr>
+    <td>Cola Rum</td>
+    <td>2.50</td>
+    <td>5</td>
+    <td><ion-icon class="icon" name="add"></ion-icon></td>
+    <td><ion-icon class="icon" name="remove"></ion-icon></td>
+    <td><ion-icon class="icon" name="close"></ion-icon></td>
+  </tr>
+-->

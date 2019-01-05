@@ -1,0 +1,44 @@
+page-home {
+    .icon{
+        font-size: 3em;
+        text-align: center;
+        line-height: 50%;
+    }
+
+    .menge{
+        width: 10%
+    }
+
+    .produkt{
+        width: 55%
+    }
+
+    .preis{
+        width: 10%
+    }
+
+    .button{
+        width: 10em;
+        height: 3,5em;
+    }
+    
+    .initial{
+        height: 3em;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td, th {
+        border: 1px solid #000000;
+        text-align: left;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+}
